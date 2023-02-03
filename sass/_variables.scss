@@ -1,0 +1,44 @@
+//Font Variables
+$font-family:'Be Vietnam Pro', sans-serif;
+$font-size:1.6rem;
+$font-size-heading:4.2rem;
+$font-size-subheading:3.2rem;
+$font-size-footer:3.6rem;
+$font-weight-1:300;
+$font-weight-2:400;
+$font-weight-3:500;
+$font-weight-4:700;
+
+//Standard Padding
+$body-padding-LR:16.4rem;
+$body-padding-M-LP:2.6rem;
+
+//Color Variables
+$color-primary-bright-red:hsl(12, 88%, 59%);
+$color-primary-dark-blue: hsl(228, 39%, 23%);
+$color-second-dark-grayish-blue: hsl(227, 12%, 61%);
+$color-second-very-dark-blue: hsl(233, 12%, 13%);
+$color-second-very-pale-red: hsl(13, 100%, 96%);
+$color-second-very-light-gray: hsl(0, 0%, 98%);
+
+
+//CTA variables
+$border-radius:12px;
+
+
+//Mixin function
+
+@mixin flex($dir,$just,$align){
+    display: flex;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin MainBtn($ptb,$plr,$bg-color,$text-color){
+    padding: $ptb $plr;
+    color:$text-color;
+    background: $bg-color;
+    border:none;
+    border-radius: $border-radius;
+    box-shadow: 0 2px 1px $color-second-very-pale-red;
+}
