@@ -1,0 +1,38 @@
+.header{
+    @include flex(column,center,center);
+    padding: 0 $body-padding-LR;
+    background-image: url("../images/bg-tablet-pattern.svg");
+    background-repeat: none;
+    background-size: cover;
+    
+    &__navigation{
+        width: 100%;
+        background: transparent;
+        padding: 5.4rem 0;
+        @include flex(row,space-between,center);
+        
+        &--list{
+            @include flex(row,center,center);
+            height: 100%;
+            &--item{
+                color:$color-primary-dark-blue;
+                font-weight: $font-weight-2;
+                text-decoration: none;
+                transition: all .3s ease;
+                &:not(:last-child){
+                    margin-right: 2.4rem;
+                }
+                &:active,&:hover{
+                    color:$color-second-dark-grayish-blue;
+                }
+            }
+        }
+        
+        &--cta{
+            @include MainBtn(1.4rem,2.4rem,$color-primary-bright-red,$color-second-very-pale-red);
+            &:active,&:hover{
+                background: $color-hover;
+            }
+        }
+    }
+}
