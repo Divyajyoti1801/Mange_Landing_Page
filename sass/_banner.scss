@@ -1,0 +1,23 @@
+.banner{
+    @include flex(row,space-between,center);
+    padding: 6.4rem $body-padding-LR;
+    background:$color-primary-bright-red;
+    background-image: url("../images/bg-simplify-section-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 100%;
+    @include breakpoint($bp-1){
+        padding: 5.4rem 10rem;
+    }
+
+    &__heading{
+        color:$color-second-very-pale-red;
+        font-size: $font-size-heading;
+        width: 50%;
+    }
+    &__btn{
+        @include MainBtn(1.4rem,3rem,$color-second-very-pale-red,$color-primary-bright-red);
+        box-shadow: none;
+    }
+    
+}

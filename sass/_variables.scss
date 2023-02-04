@@ -20,7 +20,7 @@ $color-second-dark-grayish-blue: hsl(227, 12%, 61%);
 $color-second-very-dark-blue: hsl(233, 12%, 13%);
 $color-second-very-pale-red: hsl(13, 100%, 96%);
 $color-second-very-light-gray: hsl(0, 0%, 98%);
-$color-hover:hsl(12%, 75%, 65%);
+$color-hover:hsl(12, 75%, 65%);
 
 
 //CTA variables
@@ -45,6 +45,18 @@ $border-radius:30px;
     font-size: $font-size;
     font-weight: $font-weight-3;
     font-family: $font-family;
-    box-shadow: 0 10px 1px $color-second-very-pale-red;
+    box-shadow: 0 10px 8px $color-second-very-pale-red;
     cursor: pointer;
 }
+
+@mixin breakpoint($bp){
+    @media only screen and (max-width:$bp) {
+        @content;
+    }
+}
+
+//Breakpoints variable
+
+$bp-1:80em;
+$bp-2:64em;
+$bp-3:57em;

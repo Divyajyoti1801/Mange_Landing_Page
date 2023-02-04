@@ -1,29 +1,72 @@
 .information{
     padding: 5.4rem $body-padding-LR;
-    @include flex(row,center,space-between);
-    
+    @include flex(row,space-between,flex-start);
+    position: relative;
+    @include breakpoint($bp-1){
+        padding: 5.4rem 10rem;
+    }
+    @include breakpoint($bp-3){
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+
+    &__bg-image{
+        position: absolute;
+        bottom: -90%;
+        left: -30%;
+        @include breakpoint($bp-2){
+           left: -50%;
+        }
+    }
     &__info{
         @include flex(column,flex-start,center);
-        
+        margin-right: 14rem;
+        @include breakpoint($bp-3){
+            flex-direction: column;
+            justify-content: center;
+            align-items:center;
+            margin-right: 0;
+            margin-bottom: 4rem;
+        }
         &--heading{
             font-size: $font-size-subheading;
             font-weight: $font-weight-4;
             color:$color-primary-dark-blue;
             margin-bottom: 3rem;
+            @include breakpoint($bp-3){
+                width: 100%;
+                text-align: center;
+            }
         }
         &--text{
             font-weight: $font-weight-2;
+            @include breakpoint($bp-3){
+                width: 100%;
+                text-align: center;
+            }
         }
-        margin-right: 14rem;
+        
     }
     
     &__cards{
         @include flex(column,center,center);
+        @include breakpoint($bp-3){
+            width: 100%;
+        }
         &--card{
             display: grid;
             grid-template-columns: min-content 1fr;
             grid-template-rows:  min-content 1fr;
             column-gap:2.4rem;
+            @include breakpoint($bp-3){
+                grid-template-columns: min-content;
+                grid-template-rows:  min-content min-content 70%;
+                justify-content: center;
+                z-index: 4;
+                column-gap: 0;
+                row-gap: 2rem;
+            }
             &:not(:last-child){
                 margin-bottom:4.2rem;
             }
@@ -34,18 +77,32 @@
                 border-radius: $border-radius;
                 font-weight: $font-weight-4;
                 
+                @include breakpoint($bp-3){
+                    position: relative;
+    
+                }
             }
             &--heading{
                 @include flex(row,flex-start,center);
                 color:$color-primary-dark-blue;
                 font-weight: $font-weight-4;
                 font-size: 1.8rem;
+                @include breakpoint($bp-3){
+                    justify-content: center;
+                }
             }
             &--text{
                 grid-column: 2/3;
                 width: 78%;
+                @include breakpoint($bp-3){
+                    width: 100%;
+                    @include flex(row,center,center);
+                    text-align: center;
+                }
             }
         }
     }
+    
+   
 
 }

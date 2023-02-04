@@ -1,7 +1,8 @@
 .slider{
     @include flex(column, center,center);
-    padding: 5.4rem 0;
-    overflow-x: hidden;
+    padding: 5.4rem 0 17rem 0;
+    overflow: hidden;
+    position: relative;
     &__heading{
         font-size: $font-size-subheading;
         color:$color-primary-dark-blue;
@@ -9,14 +10,21 @@
     }
 
     &__container{
-        @include flex(row,center,center);
+        z-index: 4;
+        @include flex(row,space-between,center);
+        height: 30rem;
+        width: calc(56rem*4);
+        animation: scroll 20s linear infinite;
         &--slide{
             @include flex(column,center,center);
             width: 53.8rem;
             height: 22rem;
             background: $color-second-very-light-gray;
             padding: 0 4rem 4rem 4rem;
-            margin:0 3.2rem;
+            &:not(:last-child){
+                 margin-right:3.2rem;
+            }
+           
             &--avatar{
                 height: 7.4rem;
                 width: 7.4rem;
@@ -33,5 +41,22 @@
                 text-align: center;
             }
         }
+    }
+
+    &__cta{
+       @include MainBtn(1.4rem,3rem,$color-primary-bright-red,$color-second-very-pale-red);
+       &:active,&:hover{
+        background: $color-hover;
+       }
+    }
+
+}
+
+@keyframes scroll{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(calc(-56rem));
     }
 }

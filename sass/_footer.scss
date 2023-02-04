@@ -4,6 +4,9 @@
     padding: 5.4rem $body-padding-LR;
     position: relative;
     height: 100%;
+    @include breakpoint($bp-1){
+        padding: 5.4rem 10rem;
+    }
     &__header{
         @include flex(column,space-between,center);
         height: 100%;
@@ -105,5 +108,7 @@
         bottom: 20%;
         right: 10%;
     }
+
+    
 
 }
