@@ -1,10 +1,15 @@
 .header{
     @include flex(column,center,center);
+    height: 100vh;
     padding: 0 $body-padding-LR;
-    background-image: url("../images/bg-tablet-pattern.svg");
-    background-repeat: none;
-    background-size: cover;
-    
+    position: relative;
+    overflow:hidden;
+    &__bg-image{
+        position: absolute;
+        z-index:-1;
+        right: -10%;
+        top:-26%;
+    }
     &__navigation{
         width: 100%;
         background: transparent;
@@ -32,6 +37,34 @@
             @include MainBtn(1.4rem,2.4rem,$color-primary-bright-red,$color-second-very-pale-red);
             &:active,&:hover{
                 background: $color-hover;
+            }
+        }
+    }
+    
+    &__hero{
+        width: 100%;
+        padding: 5.4rem 0;
+        @include flex(row,space-between,center);
+        
+        &--content{
+            @include flex(column,center,flex-start);
+            margin-right: 8rem;
+            &--heading{
+                font-size:$font-size-heading;
+                color:$color-primary-dark-blue;
+                font-weight: $font-weight-4;
+                margin-bottom: 3.2rem;
+            }
+            &--text{
+                margin-bottom: 3.2rem;
+                width: 100%;
+            }
+            &--cta{
+                @include MainBtn(1.4rem,3rem,$color-primary-bright-red,$color-second-very-pale-red);
+                transition: all 0.3s ease;
+                &:active,&:hover{
+                    background: $color-hover;
+                }
             }
         }
     }

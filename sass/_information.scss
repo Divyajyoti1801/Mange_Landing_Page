@@ -1,0 +1,51 @@
+.information{
+    padding: 5.4rem $body-padding-LR;
+    @include flex(row,center,space-between);
+    
+    &__info{
+        @include flex(column,flex-start,center);
+        
+        &--heading{
+            font-size: $font-size-subheading;
+            font-weight: $font-weight-4;
+            color:$color-primary-dark-blue;
+            margin-bottom: 3rem;
+        }
+        &--text{
+            font-weight: $font-weight-2;
+        }
+        margin-right: 14rem;
+    }
+    
+    &__cards{
+        @include flex(column,center,center);
+        &--card{
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            grid-template-rows:  min-content 1fr;
+            column-gap:2.4rem;
+            &:not(:last-child){
+                margin-bottom:4.2rem;
+            }
+            &--num{
+                padding: 1.4rem 2.2rem;
+                background: $color-primary-bright-red;
+                color:$color-second-very-pale-red;
+                border-radius: $border-radius;
+                font-weight: $font-weight-4;
+                
+            }
+            &--heading{
+                @include flex(row,flex-start,center);
+                color:$color-primary-dark-blue;
+                font-weight: $font-weight-4;
+                font-size: 1.8rem;
+            }
+            &--text{
+                grid-column: 2/3;
+                width: 78%;
+            }
+        }
+    }
+
+}
