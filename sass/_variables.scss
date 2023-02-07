@@ -1,0 +1,61 @@
+//VARIABLES AND MIXINS
+
+//Color Variables
+$color-primary-bright-red:hsl(12, 88%, 59%);
+$color-primary-dark-blue:hsl(228, 39%, 23%);
+$color-neutral-dark-grayish-blue:hsl(227, 12%, 61%);
+$color-neutral-very-dark-blue:hsl(233, 12%, 13%);
+$color-neutral-very-pale-red:hsl(13, 100%, 96%);
+$color-neutral-very-light-gray: hsl(0, 0%, 98%);
+$color-box-shadow:hsl(12, 71%, 69%);
+
+//Font Variables
+$font-size:1.6rem;
+$font-size-heading: 5.6rem;
+$font-size-sub-heading : 4.4rem;
+$font-weight-1:400;
+$font-weight-2:500;
+$font-weight-3:700;
+$font-family:'Be Vietnam Pro', sans-serif;
+
+//Standards
+$padding-std-LR: 16rem;
+$padding-std-mob-LR: 2rem;
+$border-radius:50px;
+$border-radius-box:8px;
+$transition:all .3s ease;
+$box-shadow:0 8px 10px $color-box-shadow;
+
+//BreakPoints
+$bp-mobile:25.875em;
+$bp-tablet:57em;
+
+
+
+//Mixin Functions
+
+@mixin flex($dir,$just,$align){
+    display: flex;
+    flex-direction: $dir;
+    justify-content: $just;
+    align-items: $align;
+}
+
+@mixin btn{
+    padding: 1.4rem 3.2rem;
+    background: $color-primary-bright-red;
+    color:$color-neutral-very-pale-red;
+    font-family: $font-family;
+    font-weight: $font-weight-2;
+    transition: $transition;
+    border:none;
+    border-radius: $border-radius;
+    cursor:pointer;
+    box-shadow: $box-shadow;
+} 
+
+@mixin breakpoint($bp){
+    @media only screen and (max-width:$bp){
+        @content;
+    }
+}

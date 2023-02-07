@@ -1,0 +1,63 @@
+.header{
+    @include flex(row,space-between,center);
+    padding: 5rem $padding-std-LR;
+    @include breakpoint($bp-tablet){
+        position: relative;
+    }
+    @include breakpoint($bp-mobile){
+        padding: 5rem $padding-std-mob-LR;
+    }
+    
+    &__navigation{
+        @include flex(row,space-between,center);
+        @include breakpoint($bp-tablet){
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            top:100%;
+            left:50%;
+            transform: translateX(-50%);
+            background:$color-neutral-very-light-gray;
+            padding: 3.8rem 0;
+            min-width:32.6rem;
+        }
+        &--link{
+            text-decoration: none;
+            color:$color-primary-dark-blue;
+            font-weight: $font-weight-2;
+            transition: $transition;
+            cursor: pointer;
+            @include breakpoint($bp-tablet){
+                @include flex(row,center,center);
+                width: 100%;
+                font-weight: $font-weight-3;
+            }
+            &:not(:last-child){
+                margin-right: 3rem;
+                @include breakpoint($bp-tablet){
+                    margin-right: 0;
+                    margin-bottom: 2.6rem;
+                }
+            }
+            &:active,&:hover{
+                color:$color-neutral-dark-grayish-blue;
+            }
+        }
+    }
+    &__cta{
+        @include btn;
+        &:active,&:hover{
+            background: $color-box-shadow;
+        }
+        @include breakpoint($bp-tablet){
+            display: none;
+        }
+    }
+    &__mobile-nav{
+        display: none;
+        @include breakpoint($bp-tablet){
+            @include flex(row,center,center);
+        }
+    }
+    
+}
