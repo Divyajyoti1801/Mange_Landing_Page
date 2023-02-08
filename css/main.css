@@ -23,6 +23,22 @@ body {
   font-size: 1.6rem;
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 400;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.bg {
+  position: absolute;
+  z-index: -11;
+  top: -18%;
+  right: -8%;
+}
+@media only screen and (max-width: 25.875em) {
+  .bg {
+    width: 100%;
+    top: -8%;
+    right: -10%;
+  }
 }
 
 .header {
@@ -53,12 +69,16 @@ body {
     flex-direction: column;
     justify-content: center;
     position: absolute;
-    top: 100%;
+    top: 120%;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 8px;
     background: hsl(0deg, 0%, 98%);
     padding: 3.8rem 0;
     min-width: 32.6rem;
+    display: none;
+    transition: all 0.3s ease-in;
+    z-index: 4;
   }
 }
 .header__navigation--link {
@@ -112,6 +132,7 @@ body {
 }
 .header__mobile-nav {
   display: none;
+  cursor: pointer;
 }
 @media only screen and (max-width: 57em) {
   .header__mobile-nav {
@@ -119,5 +140,247 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    transition: all 0.4s ease;
+  }
+}
+
+.hero {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5rem 16rem;
+}
+@media only screen and (max-width: 57em) {
+  .hero {
+    flex-direction: column-reverse;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+}
+@media only screen and (max-width: 25.875em) {
+  .hero {
+    padding: 0 2rem;
+    margin-bottom: 9rem;
+  }
+}
+.hero__blanket {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.2);
+  display: none;
+  position: absolute;
+}
+@media only screen and (max-width: 57em) {
+  .hero__blanket {
+    top: 0;
+    z-index: 2;
+  }
+}
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 50%;
+  margin-right: 4rem;
+}
+@media only screen and (max-width: 57em) {
+  .hero__content {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    min-width: 100%;
+  }
+}
+.hero__content--heading {
+  font-size: 5.6rem;
+  font-weight: 700;
+  color: hsl(228deg, 39%, 23%);
+  margin-bottom: 2.8rem;
+}
+@media only screen and (max-width: 57em) {
+  .hero__content--heading {
+    min-width: 100%;
+    text-align: center;
+  }
+}
+.hero__content--text {
+  color: hsl(227deg, 12%, 61%);
+  margin-bottom: 3.2rem;
+  width: 70%;
+}
+@media only screen and (max-width: 57em) {
+  .hero__content--text {
+    min-width: 100%;
+    text-align: center;
+  }
+}
+.hero__content--cta {
+  padding: 1.4rem 3.2rem;
+  background: hsl(12deg, 88%, 59%);
+  color: hsl(13deg, 100%, 96%);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 10px hsl(12deg, 71%, 69%);
+}
+.hero__content--cta:active, .hero__content--cta:hover {
+  background: hsl(12deg, 71%, 69%);
+}
+.hero__image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 50%;
+}
+@media only screen and (max-width: 25.875em) {
+  .hero__image--img {
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.information {
+  padding: 5rem 16rem;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media only screen and (max-width: 57em) {
+  .information {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 25.875em) {
+  .information {
+    padding: 0 2rem;
+  }
+}
+.information__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-right: 12rem;
+  width: 50%;
+}
+@media only screen and (max-width: 57em) {
+  .information__text {
+    margin-right: 0;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 4.8rem;
+  }
+}
+.information__text--heading {
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: hsl(228deg, 39%, 23%);
+  margin-bottom: 2.6rem;
+}
+@media only screen and (max-width: 57em) {
+  .information__text--heading {
+    width: 100%;
+    text-align: center;
+  }
+}
+.information__text--content {
+  color: hsl(227deg, 12%, 61%);
+  width: 80%;
+}
+@media only screen and (max-width: 57em) {
+  .information__text--content {
+    width: 100%;
+    text-align: center;
+  }
+}
+.information__point {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+@media only screen and (max-width: 57em) {
+  .information__point {
+    width: 100%;
+  }
+}
+.information__point--points {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: min-content min-content;
+  column-gap: 2rem;
+}
+@media only screen and (max-width: 57em) {
+  .information__point--points {
+    width: 100%;
+    row-gap: 2rem;
+  }
+}
+@media only screen and (max-width: 25.875em) {
+  .information__point--points {
+    width: 100%;
+    column-gap: 0;
+  }
+}
+.information__point--points:not(:last-child) {
+  margin-bottom: 3.8rem;
+}
+.information__point--points--num {
+  padding: 1.2rem 2.4rem;
+  background: hsl(12deg, 88%, 59%);
+  color: hsl(13deg, 100%, 96%);
+  font-weight: 500;
+  font-family: "Be Vietnam Pro", sans-serif;
+  border-radius: 50px;
+}
+@media only screen and (max-width: 25.875em) {
+  .information__point--points--num {
+    position: relative;
+  }
+  .information__point--points--num::before {
+    content: "01";
+    padding: 1.2rem 2.4rem;
+    top: 0;
+    left: 30%;
+    background: hsl(13deg, 100%, 96%);
+    position: absolute;
+    border-radius: 50px;
+    z-index: -11;
+  }
+}
+.information__point--points--heading {
+  color: hsl(228deg, 39%, 23%);
+  font-weight: 700;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media only screen and (max-width: 25.875em) {
+  .information__point--points--heading {
+    background: hsl(13deg, 100%, 96%);
+    padding-left: 1rem;
+  }
+}
+.information__point--points--text {
+  grid-column: 2/3;
+  color: hsl(227deg, 12%, 61%);
+  width: 100%;
+}
+@media only screen and (max-width: 25.875em) {
+  .information__point--points--text {
+    grid-column: 1/3;
+    line-height: 2.4rem;
   }
 }/*# sourceMappingURL=main.css.map */
