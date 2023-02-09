@@ -1,0 +1,134 @@
+.footer{
+    padding: 5.2rem $padding-std-LR;
+    background: $color-neutral-very-dark-blue;
+    @include flex(row,space-between,flex-start);
+    @include breakpoint($bp-tablet){
+        @include flex(column-reverse,space-between,center);
+        padding: 4.2rem $padding-std-mob-LR 2.2rem $padding-std-mob-LR;
+    }
+    position: relative;
+    
+    &__header{
+        @include flex(column,space-between,center);
+        @include breakpoint($bp-tablet){
+            @include flex(column-reverse,space-between,center);
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+        &--logo{
+            margin-bottom: 8rem;
+            @include breakpoint($bp-tablet){
+                margin-bottom: 0;    
+            }
+           
+        }
+        &--logos{
+            @include flex(row,space-between,center);
+            @include breakpoint($bp-tablet){
+                margin-bottom: 4.2rem;    
+            }
+            &--item{
+                transition: $transition;
+                cursor: pointer;
+                &:hover{
+                    svg{
+                        path{
+                            fill:$color-primary-bright-red;
+                        }
+                    }
+                }
+                &:not(:last-child){
+                    margin-right: 1.2rem;
+                    @include breakpoint($bp-tablet){
+                        margin-right: 2.8rem;    
+                    }
+                }
+            
+            }
+            
+        }
+    }
+    
+    &__list{
+        @include flex(row,center,flex-start);
+        @include breakpoint($bp-tablet){
+            margin-bottom: 4rem;
+            width: 100%;
+        }
+        &--1{
+            @include flex(column,space-between,flex-start);
+            &--item{
+                text-decoration: none;
+                color:$color-neutral-very-pale-red;
+                &:hover,&:active{
+                    color:$color-primary-bright-red;
+                }
+                &:not(:last-child){
+                    margin-bottom: 1.8rem;
+                }
+            }
+            margin-right: 22rem;
+            @include breakpoint($bp-tablet){
+                margin-right: 11rem;    
+            }
+
+        }
+        &--2{
+            @include flex(column,space-between,flex-start); 
+                &--item{
+                    text-decoration: none;
+                    color:$color-neutral-very-pale-red;
+                    &:hover,&:active{
+                        color:$color-primary-bright-red;
+                    }
+                    &:not(:last-child){
+                        margin-bottom: 1.8rem;
+                    }
+                }
+            }
+    }
+    
+    &__cta{
+        @include flex(row,center,center);
+        @include breakpoint($bp-tablet){
+            margin-bottom: 4rem;
+            width: 100%;
+        }
+        &--input{
+            padding: 1.2rem 2.4rem;
+            border-radius: $border-radius;
+            outline:none;
+            margin-right: 0.8rem;
+            font-size: $font-size;
+            font-family: $font-family;
+            font-weight: $font-weight-2;
+            &::placeholder{
+                font-size: 1.2rem;
+            }
+        }
+        &--cta{
+            padding: 1.2rem 2.4rem;
+            border-radius: $border-radius;
+            background: $color-primary-bright-red;
+            font-family: $font-family;
+            font-weight: $font-weight-2;
+            color:$color-neutral-very-pale-red;
+            border: none;
+        }
+    }
+    &__copyright{
+        color:$color-neutral-very-light-gray;
+        font-size: 1.2rem;
+        position:absolute;
+        bottom: 20%;
+        right: 10%;
+        text-align: center;
+        @include breakpoint($bp-tablet){
+            bottom: 8%;
+            left: 50%;
+            right: 0%;
+            transform: translateX(-50%);
+        }
+    }
+    
+}

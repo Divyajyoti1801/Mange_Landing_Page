@@ -1,0 +1,48 @@
+.cta{
+    padding: 5.2rem $padding-std-LR;
+    background:$color-primary-bright-red; 
+    background-image: url('../images/bg-simplify-section-desktop.svg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    @include flex(row,space-between,center);
+    
+    @include breakpoint($bp-tablet){
+        flex-direction: column;
+    }
+   
+    @include breakpoint($bp-mobile){
+        flex-direction: column;
+        padding: 8.5rem $padding-std-mob-LR;
+        background-image: url('../images/bg-simplify-section-mobile.svg');
+        background-size: contain;
+    }
+
+    &__header{
+        color:$color-neutral-very-pale-red;
+        font-size: $font-size-sub-heading;
+        font-weight: $font-weight-2;
+        @include breakpoint($bp-tablet){
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+        @include breakpoint($bp-mobile){
+            text-align: center;
+            margin-bottom: 2.4rem;
+        }
+    }
+    
+    &__button{
+       padding: 1.4rem 3.2rem;
+        background: #fff;
+        color:$color-primary-bright-red;
+        font-family: $font-family;
+        font-weight: $font-weight-3;
+        transition: $transition;
+        border:none;
+        border-radius: $border-radius;
+        cursor:pointer;
+        box-shadow: $box-shadow;
+    }
+    
+    
+}
