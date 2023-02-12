@@ -113,7 +113,11 @@
             font-family: $font-family;
             font-weight: $font-weight-2;
             color:$color-neutral-very-pale-red;
+            cursor: pointer;
             border: none;
+            &:active,&:hover{
+                background-color: $color-box-shadow;
+            }
         }
     }
     &__copyright{

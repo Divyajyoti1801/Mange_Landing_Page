@@ -9,6 +9,7 @@
     @include breakpoint($bp-mobile){
         padding: 0 $padding-std-mob-LR;
     }
+    margin-bottom: 15rem;
     
     &__text{
         @include flex(column,center,flex-start);

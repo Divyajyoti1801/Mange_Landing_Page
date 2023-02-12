@@ -253,6 +253,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  margin-bottom: 15rem;
 }
 @media only screen and (max-width: 57em) {
   .information {
@@ -383,6 +384,73 @@ body {
     grid-column: 1/3;
     line-height: 2.4rem;
   }
+}
+
+.review {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16rem;
+}
+.review__heading {
+  width: 100%;
+  text-align: center;
+  font-size: 4.4rem;
+  font-weight: 700;
+  color: hsl(228deg, 39%, 23%);
+  margin-bottom: 10rem;
+}
+.review__list {
+  width: 100%;
+  height: 30rem;
+  position: relative;
+  margin-bottom: 4.2rem;
+  background: teal;
+}
+.review__list--item {
+  position: absolute;
+  width: 54rem;
+  height: 22.4rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 0 2.8rem 2.8rem 2.8rem;
+  background: hsl(0deg, 0%, 98%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.review__list--item--img {
+  width: 7rem;
+  height: 7rem;
+  transform: translateY(-60%);
+}
+.review__list--item--name {
+  color: hsl(228deg, 39%, 23%);
+  font-weight: 700;
+  margin-bottom: 2.8rem;
+}
+.review__list--item--text {
+  color: hsl(227deg, 12%, 61%);
+  width: 100%;
+  text-align: center;
+}
+.review__cta {
+  padding: 1.4rem 3.2rem;
+  background: hsl(12deg, 88%, 59%);
+  color: hsl(13deg, 100%, 96%);
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 8px 10px hsl(12deg, 71%, 69%);
+}
+.review__cta:active, .review__cta:hover {
+  background: hsl(12deg, 71%, 69%);
 }
 
 .cta {
@@ -588,7 +656,11 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 500;
   color: hsl(13deg, 100%, 96%);
+  cursor: pointer;
   border: none;
+}
+.footer__cta--cta:active, .footer__cta--cta:hover {
+  background-color: hsl(12deg, 71%, 69%);
 }
 .footer__copyright {
   color: hsl(0deg, 0%, 98%);
