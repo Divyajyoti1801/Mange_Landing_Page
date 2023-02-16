@@ -392,6 +392,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-bottom: 16rem;
+  padding-bottom: 2rem;
   overflow: hidden;
 }
 .review__heading {
