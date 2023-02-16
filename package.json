@@ -1,0 +1,38 @@
+{
+  "name": "mange_landing_page",
+  "version": "1.0.1",
+  "description": "Manage Landing extensive use of grid + flexbox",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm-run-all",
+    "compile:sass": "node-sass sass/main.scss css/main.comp.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/main.comp.css -o  css/main.prefix.css",
+    "compress:css": "node-sass css/main.prefix.css css/main.css --output-style compressed",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Divyajyoti1801/Mange_Landing_Page.git"
+  },
+  "keywords": [
+    "HTML5",
+    "SCSS",
+    "SASS",
+    "npm",
+    "animation"
+  ],
+  "author": "Divyajyoti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Divyajyoti1801/Mange_Landing_Page/issues"
+  },
+  "homepage": "https://github.com/Divyajyoti1801/Mange_Landing_Page#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.13",
+    "concat": "^1.0.3",
+    "node-sass": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.58.1"
+  }
+}
